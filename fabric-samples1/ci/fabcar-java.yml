@@ -1,0 +1,14 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+steps:
+  - script: bash startFabric.sh java
+    workingDirectory: CardioGene
+    displayName: Start Fabric
+  - script: retry -- mvn dependency:go-offline
+    workingDirectory: CardioGene/java
+    displayName: Install FabCar application dependencies
+  - script: mvn test
+    workingDirectory: CardioGene/java
+    displayName: Run FabCar application
