@@ -204,13 +204,13 @@ ${PEER0_ORG1} chaincode invoke \
 ${PEER1_ORG1} chaincode query \
   -C mychannel \
   -n CardioGene \
-  -c '{"function":"queryAllCars","Args":[]}' \
+  -c '{"function":"queryAllPatients","Args":[]}' \
   --peerAddresses peer1.org1.example.com:8051 \
   --tlsRootCertFiles ${ORG1_TLS_ROOTCERT_FILE}
 ${PEER1_ORG2} chaincode query \
   -C mychannel \
   -n CardioGene \
-  -c '{"function":"queryAllCars","Args":[]}' \
+  -c '{"function":"queryAllPatients","Args":[]}' \
   --peerAddresses peer1.org2.example.com:10051 \
   --tlsRootCertFiles ${ORG2_TLS_ROOTCERT_FILE}
 
@@ -235,10 +235,10 @@ JavaScript:
     node registerUser
 
   You can run the invoke application as follows. By default, the invoke application will
-  create a new car, but you can update the application to submit other transactions:
+  create a new patient, but you can update the application to submit other transactions:
     node invoke
 
   You can run the query application as follows. By default, the query application will
-  return all cars, but you can update the application to evaluate other transactions:
+  return all patients, but you can update the application to evaluate other transactions:
     node query
 EOF
